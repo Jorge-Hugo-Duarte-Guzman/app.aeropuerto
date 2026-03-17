@@ -54,7 +54,7 @@ st.markdown(
 st.image('encabezado.png', use_container_width=True)
 st.title('Datos Operaciones')
 
-with st.container(border):
+with st.container(border=True):
     col1, col2, col3 = st.columns(3)
     with col1:
         st.metric('Mínimo', f'{minimo:.0f}', border=True)
