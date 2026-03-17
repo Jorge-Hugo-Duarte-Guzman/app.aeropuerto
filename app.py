@@ -120,5 +120,5 @@ with tab2:
         color='CANTIDAD',
         color_continuous_scale='tealgrn'
     )
-    fig_rutas_2.update_coloraxes(showscale=False)
+    fig_rutas2.update_coloraxes(showscale=False)
     st.plotly_chart(fig_rutas2, use_container_width=True, key='rutas_tab2')
