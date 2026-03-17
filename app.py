@@ -107,3 +107,18 @@ with col5:
     st.plotly_chart(fig_rutas, use_container_width=True)
 # Opciones de personalización para las barras en cuanto al que 'showcale=False' es para oculta la barra de colores, 'color_continuous_scale' define la paleta de colores para las barras, y 'update_coloraxes' se utiliza para aplicar la configuración de color a la gráfica.
 
+tab1, tab2 = st.tabs(['Matriz de Datos', 'Gráficas de Barras'])
+
+with tab1:
+    st.dataframe(df_top10_rutas)
+with tab2:
+    fig_rutas2 = px.bar(
+        df_top10_rutas.sort_values('CANTIDAD', ascending=True),
+        x='CANTIDAD', 
+        y='RUTA', 
+        title='Top 10 Rutas con Mayor Número de Operaciones',
+        color='CANTIDAD',
+        color_continuous_scale='tealgrn'
+    )
+    fig_rutas_2.update_coloraxes(showscale=False)
+    st.plotly_chart(fig_rutas2, use_container_width=True, key='rutas_tab2')
